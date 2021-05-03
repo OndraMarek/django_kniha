@@ -4,9 +4,17 @@
 
 {% block content %}
     <h3>{{ kniha.nazev }}</h3>
+    {% if kniha.foto %}
     <p><img src="{{ kniha.foto.url }}" alt="{{ kniha.nazev }}"></p>
+    {% else %}
+    <p><img src="" alt="Foto neni k dispozici"></p>
+    {% endif %}
     <p>{{ kniha.popis }}</p>
     <p>Autor: {{ kniha.autor }}</p>
     <p>Rok vydání: {{ kniha.rok }}</p>
     <p>Žánr: {{ kniha.zanry }}</p>
+    <hr>
+    <p><a href="{% url 'kniha-update' kniha.pk %}" class="btn btn-primary">Upravit</a>
+    <a href="{% url 'kniha-delete' kniha.pk %}" class="btn btn-danger">Smazat</a></p>
+
 {% endblock %}

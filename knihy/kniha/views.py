@@ -26,3 +26,19 @@ class KnihaDetailView(DetailView):
 
     context_object_name = 'kniha'
     template_name = 'detail.html'
+
+
+class KnihaCreate(CreateView):
+    model = Knihy
+    fields = ['nazev', 'popis', 'autor', 'rok', 'zanry', 'foto']
+    initial = {'nazev': 'test'}
+
+
+class KnihaUpdate(UpdateView):
+    model = Knihy
+    fields = '__all__' # Not recommended (potential security issue if more fields added)
+
+
+class KnihaDelete(DeleteView):
+    model = Knihy
+    success_url = reverse_lazy('list')

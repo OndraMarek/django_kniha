@@ -9,4 +9,5 @@
     <p>Žánr: {{ kniha.zanry }}</p>
     <hr>
     {% endfor %}
+    <p><a href="{% url 'kniha-create' %}" class="btn btn-success">Nová kniha</a></p>
 {% endblock %}

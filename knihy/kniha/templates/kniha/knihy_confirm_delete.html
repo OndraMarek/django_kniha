@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Potvrzení mazání knihy{% endblock %}
+
+{% block content %}
+  <h3>Potvrzení mazání knihy</h3>
+  <p>Chcete opravdu smazat: {{ kniha }}</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Ano, smazat">
+  </form>
+{% endblock %}

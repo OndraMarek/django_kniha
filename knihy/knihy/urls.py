@@ -22,8 +22,8 @@ from knihy import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('kniha/', include('kniha.urls')),
-    path('', RedirectView.as_view(url='kniha/')),
+    path('knihy/', include('kniha.urls')),
+    path('', RedirectView.as_view(url='knihy/')),
 ]
 
 
