@@ -21,7 +21,7 @@ class Knihy(models.Model):
     autor = models.CharField(max_length=100, null=True, verbose_name="Autor knihy",
                              help_text='Zadejte text o maximální délce 100 znaků')
     rok = models.IntegerField(null=True, help_text="Zadejte rok vydání knihy", verbose_name="Rok vydání")
-    foto = models.ImageField(upload_to='knihy/%Y/%m/%d/', blank=True, null=True, verbose_name="Fotka knihy")
+    foto = models.ImageField(upload_to='kniha/%Y/%m/%d/', blank=True, null=True, verbose_name="Fotka knihy")
     zanry = models.ForeignKey(Zanry, on_delete=models.RESTRICT)
 
     class Meta:

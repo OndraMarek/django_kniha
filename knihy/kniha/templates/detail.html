@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Podrobnosti o knize{% endblock %}
+
+{% block content %}
+    <h3>{{ kniha.nazev }}</h3>
+    <p><img src="{{ kniha.foto.url }}" alt="{{ kniha.nazev }}"></p>
+    <p>{{ kniha.popis }}</p>
+    <p>Autor: {{ kniha.autor }}</p>
+    <p>Rok vydání: {{ kniha.rok }}</p>
+    <p>Žánr: {{ kniha.zanry }}</p>
+{% endblock %}

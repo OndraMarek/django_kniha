@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Přehled knih{% endblock %}
+
+{% block content %}
+    {% for kniha in kniha_list %}
+    <h3> <a href="{% url 'detail' kniha.pk %}"> {{ kniha.nazev }}</a></h3>
+    <p>Autor: {{ kniha.autor }}</p>
+    <p>Žánr: {{ kniha.zanry }}</p>
+    <hr>
+    {% endfor %}
+{% endblock %}
