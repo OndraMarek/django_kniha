@@ -10,16 +10,17 @@
     {% load static %}
     {% block css %}
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header class="jumbotron-fluid bg-success p-3">
-        <h1 class="text-center text-dark display-3">BazarWeb</h1>
-    </header>
+    <header class="jumbotron-fluid bg-success p-3"><a class="jmb" href="{% url 'index' %}">
+        <h1 class="text-center text-white display-3"><b>Databáze knih</b></h1>
+    </a></header>
     <main class="container">
     {% block content %}{% endblock %}
     </main>
-    <footer class="container-fluid bg-dark text-light p-3">
+    <footer class="container-fluid p-3">
+        <hr>
         <p class="text-center">&copy; 2021 - SŠPU Opava - IT4</p>
     </footer>
 <!-- jQuery library -->

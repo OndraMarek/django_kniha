@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 # Create your views here.
 def index(request):
     context = {
-        'nadpis': 'Úvodní stránka',
-        'obsah': 'Obsah stránky'
+        'nadpis': 'Seznam knih',
+        'obsah': ''
     }
 
     return render(request, template_name='index.html', context=context)
@@ -30,7 +30,7 @@ class KnihaDetailView(DetailView):
 
 class KnihaCreate(CreateView):
     model = Knihy
-    fields = ['nazev', 'popis', 'autor', 'rok', 'zanry', 'foto']
+    fields = ['nazev', 'popis', 'autor', 'rok', 'zanry', 'foto','nakladatelstvi','isbn']
     initial = {'nazev': 'test'}
 
 

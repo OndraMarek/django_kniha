@@ -1,0 +1,25 @@
+.obr {
+    width: 120px;
+    height: auto;
+}
+
+.odkaz {
+    color: green;
+}
+
+.odkaz:hover{
+    text-decoration: none;
+    color: #14db33;
+}
+
+.jmb:hover{
+    color: white;
+}
+
+.uvod {
+    color: black;
+}
+
+.uvod:hover{
+    color: black;
+}

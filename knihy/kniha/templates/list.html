@@ -4,9 +4,17 @@
 
 {% block content %}
     {% for kniha in kniha_list %}
-    <h3> <a href="{% url 'detail' kniha.pk %}"> {{ kniha.nazev }}</a></h3>
-    <p>Autor: {{ kniha.autor }}</p>
-    <p>Žánr: {{ kniha.zanry }}</p>
+    <div class="container row p-3">
+        <div class="col-md-3">
+            <p><img class="obr" src="{{ kniha.foto.url }}" alt="{{ kniha.nazev }}"></p>
+        </div>
+        <div class="col-md-9">
+            <h3 class="p-1"> <a class="odkaz" href="{% url 'detail' kniha.pk %}"> {{ kniha.nazev }}</a></h3>
+            <p>Autor: <b>{{ kniha.autor }}</b></p>
+            <p>Žánr: <b>{{ kniha.zanry }}</b></p>
+            <p>Nakladatelství: <b>{{ kniha.nakladatelstvi }}</b></p>
+        </div>
+    </div>
     <hr>
     {% endfor %}
     <p><a href="{% url 'kniha-create' %}" class="btn btn-success">Nová kniha</a></p>

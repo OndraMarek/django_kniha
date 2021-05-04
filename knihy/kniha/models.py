@@ -21,6 +21,10 @@ class Knihy(models.Model):
     autor = models.CharField(max_length=100, null=True, verbose_name="Autor knihy",
                              help_text='Zadejte text o maximální délce 100 znaků')
     rok = models.IntegerField(null=True, help_text="Zadejte rok vydání knihy", verbose_name="Rok vydání")
+    nakladatelstvi = models.CharField(max_length=30,blank=True, null=True, verbose_name="Nakladatelstvi",
+                             help_text='Zadejte text o maximální délce 30 znaků')
+    isbn = models.CharField(max_length=30,blank=True, null=True, verbose_name="ISBN",
+                             help_text='Zadejte ISBN knihy')
     foto = models.ImageField(upload_to='kniha/%Y/%m/%d/', blank=True, null=True, verbose_name="Fotka knihy")
     zanry = models.ForeignKey(Zanry, on_delete=models.RESTRICT)
 

@@ -3,6 +3,6 @@
 {% block title %}Úvodní stránka{% endblock %}
 
 {% block content %}
-    <h2>{{ nadpis }}</h2>
+    <h2><a class="uvod" href="{% url 'list' %}">{{ nadpis }}</a></h2>
     <p>{{ obsah }}</p>
 {% endblock %}

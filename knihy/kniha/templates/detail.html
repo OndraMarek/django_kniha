@@ -3,18 +3,27 @@
 {% block title %}Podrobnosti o knize{% endblock %}
 
 {% block content %}
-    <h3>{{ kniha.nazev }}</h3>
-    {% if kniha.foto %}
-    <p><img src="{{ kniha.foto.url }}" alt="{{ kniha.nazev }}"></p>
-    {% else %}
-    <p><img src="" alt="Foto neni k dispozici"></p>
-    {% endif %}
-    <p>{{ kniha.popis }}</p>
-    <p>Autor: {{ kniha.autor }}</p>
-    <p>Rok vydání: {{ kniha.rok }}</p>
-    <p>Žánr: {{ kniha.zanry }}</p>
+    <h3 class="p-3">{{ kniha.nazev }}</h3>
+    <div class="container row">
+        <div class="col-md-4">
+            {% if kniha.foto %}
+            <p><img src="{{ kniha.foto.url }}" alt="{{ kniha.nazev }}"></p>
+            {% else %}
+            <p><img src="" alt="Foto neni k dispozici"></p>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <p>{{ kniha.popis }}</p>
+            <p>Autor: <b>{{ kniha.autor }}</b></p>
+            <p>Rok vydání: <b>{{ kniha.rok }}</b></p>
+            <p>Žánr: <b>{{ kniha.zanry }}</b></p>
+            <p>Nakladatelstvi: <b>{{ kniha.nakladatelstvi }}</b></p>
+            <p>ISBN: <b>{{ kniha.isbn }}</b></p>
+        </div>
+    </div>
     <hr>
     <p><a href="{% url 'kniha-update' kniha.pk %}" class="btn btn-primary">Upravit</a>
-    <a href="{% url 'kniha-delete' kniha.pk %}" class="btn btn-danger">Smazat</a></p>
+    <a href="{% url 'kniha-delete' kniha.pk %}" class="btn btn-danger">Smazat</a>
+    <a href="{% url 'list' %}" class="btn btn-info">Zpět</a></p>
 
 {% endblock %}
